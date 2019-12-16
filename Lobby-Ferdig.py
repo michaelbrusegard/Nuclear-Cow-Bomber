@@ -7,7 +7,7 @@ white = (255,255,255)
 black= (0,0,0)
 
 lobbyvindu = pygame.display.set_mode((1000,707)) #dimensjonene til vinduet
-pygame.display.set_caption("Soviet Run") #navn på vinduet
+pygame.display.set_caption("Soviet Menu") #navn på vinduet
 lobbyvindu.fill(black) # fyller hele vinduet med sort
 
 """
