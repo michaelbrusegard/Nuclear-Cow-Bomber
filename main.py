@@ -106,6 +106,7 @@ class enemy(pygame.sprite.Sprite):
         self.rect.y = y     # rectangle y
 
     def move(self, player):     # enemy movement function, called by mainloop to player
+        sound_moo.play()        # play loaded moo sound
         self.direction_x = player.rect.x - self.rect.x  # find direction vector (direction_x, direction_y) between enemy and player
         self.direction_y = (player.rect.y + (player_y - enemy_y)) - self.rect.y  # adding the difference between the player height and the enemy height so it looks like they are proportional to each other, othervise the enemy would have been trying to get to the head of the player instead of the legs
         distance = math.hypot(self.direction_x, self.direction_y)  # use math to calculate the hypotenuse between the direction_x and direction_y (the cathetuses)
@@ -142,8 +143,8 @@ class enemy(pygame.sprite.Sprite):
 
             self.image = self.images[self.frame // enemy_animation_cycles]      # gets the image for each frame when moving right
 
-        if self.rect.colliderect(player.rect):      # if enemy rectangle collides with player
-            enemy_death.play()      # play loaded enemy death sound
+        """if self.rect.colliderect(player.rect):      # if enemy rectangle collides with player
+            enemy_death.play()      # play loaded enemy death sound"""
 
 class platform(pygame.sprite.Sprite):
     def __init__(self):
@@ -293,7 +294,7 @@ main = True     # main-loop variable set to true
 pygame.display.set_caption("Nuclear Cow Bomber")      # sets a title
 pygame.mixer.music.load(os.path.join("songs", "ussr_anthem.ogg"))      # loads a song
 pygame.mixer.music.play(-1)       # plays whats loaded on repeat
-enemy_death = pygame.mixer.Sound(os.path.join("songs", "moo.ogg"))     # sets enemy suicide sound
+sound_moo = pygame.mixer.Sound(os.path.join("songs", "moo.ogg"))     # sets enemy suicide sound
 
 frames_per_second = 60        # frame rate
 moving_background_speed = 2     # how fast the background moves
