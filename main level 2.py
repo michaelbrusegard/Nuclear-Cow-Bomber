@@ -350,7 +350,7 @@ platformList = []
 
 highscore = 569
 
-level = 1
+level = 2
 test = 0
 
 if level != 0:

@@ -1,4 +1,5 @@
 import pygame
+import time
 
 meny=True
 
@@ -8,7 +9,6 @@ black= (0,0,0)
 lobbyvindu = pygame.display.set_mode((1000,707)) #dimensjonene til vinduet
 pygame.display.set_caption("Soviet Run") #navn på vinduet
 lobbyvindu.fill(black) # fyller hele vinduet med sort
-
 
 """
 def Level1():
@@ -33,7 +33,7 @@ while meny:
     pygame.display.update()
     for event in pygame.event.get():
         if event.type == pygame.QUIT: #Hvis du hendelsen er helt lik at du klikker på krysset 
-            pygame.QUIT # Stopper pygame
+            pygame.QUIT() # Stopper pygame
             pygame.display.update() #Oppdaterer vinduet over at pygame har stoppet
 
     font = pygame.font.Font(pygame.font.get_default_font(), 40) # font med fonttype og størrelse
@@ -67,17 +67,21 @@ while meny:
                     pygame.display.flip()
                     pygame.display.update()
                     lobbyvindu.blit(stlv1,(400,450))
+                    time.sleep(5)
+                    exec(open("main.py").read())
                     #level1()
     
 
         if event.type == pygame.MOUSEBUTTONDOWN:  
-            if pygame.mouse.get_pos()[0] >= 500 and pygame.mouse.get_pos()[1] >= 250:  #Hvis den trykker ned musknapp og element 0 i listen pygame.get_pos er større eller lik og element 1 er større eller lik. 
+            if pygame.mouse.get_pos()[0] >= 500 and pygame.mouse.get_pos()[1] >= 250:  #Hvis den trykker ned musknapp og element 0 i listen pygame.get_pos er større eller lik og element 1 er større eller lik.
                 if pygame.mouse.get_pos()[0] <= 600 and pygame.mouse.get_pos()[1] <= 350:#Skjekker om de er mindre enn noen variabler
                     lobbyvindu.fill(white)  #Hvis begge If testene er sant så skal skjermen bli hvit og tekst stlv2 skal dukke opp og starte funksjonen Level2().
                     pygame.display.update()
                     lobbyvindu.blit(stlv2,(400,450))
+                    time.sleep(5)
+                    exec(open("main level 2.py").read())
                     #level2()
-               
+
         if event.type == pygame.MOUSEBUTTONDOWN:
             if pygame.mouse.get_pos()[0] >= 400 and pygame.mouse.get_pos()[1] >= 350: #Hvis den trykker ned musknapp og element 0 i listen pygame.get_pos er større eller lik og element 1 er større eller lik. 
                 if pygame.mouse.get_pos()[0] <= 460 and pygame.mouse.get_pos()[1] <= 450:#Skjekker om de er mindre enn noen variabler
