@@ -293,7 +293,7 @@ main = True     # main-loop variable set to true
 pygame.display.set_caption("Nuclear Cow Bomber")      # sets a title
 pygame.mixer.music.load(os.path.join("songs", "ussr_anthem.ogg"))      # loads a song
 pygame.mixer.music.play(-1)       # plays whats loaded on repeat
-enemy_death = pygame.mixer.Sound(os.path.join("songs", "allahu_akbar.ogg"))     # sets enemy suicide sound
+enemy_death = pygame.mixer.Sound(os.path.join("songs", "moo.ogg"))     # sets enemy suicide sound
 
 frames_per_second = 60        # frame rate
 moving_background_speed = 2     # how fast the background moves
