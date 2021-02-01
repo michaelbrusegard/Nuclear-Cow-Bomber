@@ -1,0 +1,12 @@
+# Python cache and virtual environment
+__pycache__/
+python_modules/
+
+# VScode project settings
+.vscode/
+
+# MacOS folder information
+.DS_Store
+
+# Jupyter Notebook
+.ipynb_checkpoints
